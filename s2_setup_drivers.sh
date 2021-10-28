@@ -3,7 +3,7 @@ echo "Step1: Installing WIFI Drivers and essential networking packages"
 sleep 1
 pacman -S broadcom-wl wireless_tools --needed 
 modprobe wl
-echo -e "\nDone\n\n"
+echo -e "\nDONE\n\n"
 sleep 1
 
 echo "Step2: Installing Grephics Drivers and microcode"
