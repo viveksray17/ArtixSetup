@@ -32,6 +32,6 @@ sudo cp /data/vivek/Downloads/internet/fonts/* /usr/share/fonts/ -R
 sudo fc-cache -fv
 
 echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
-sudo cp /data/vivek/Downloads/internet/Breeze_Snow /usr/share/icons -R
+sudo cp /data/vivek/Downloads/internet/DMZ-White /usr/share/icons -R
 sudo cp /data/vivek/Downloads/internet/Icons/* /usr/share/icons -R
 echo -e "DONE"
