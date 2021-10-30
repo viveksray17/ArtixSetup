@@ -5,3 +5,5 @@ if [ -d "$DIR" ]; then
 fi
 command git clone --bare https://github.com/viveksray17/dotfiles.git $HOME/.dotfiles.git
 command /usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME checkout
+command /usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME remote remove origin
+command /usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME remote add origin git@github.com:viveksray17/dotfiles.git
