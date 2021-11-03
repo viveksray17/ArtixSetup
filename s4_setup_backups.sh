@@ -39,4 +39,8 @@ echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee /etc/environment
 
 echo -e "\nAdd shell script for android file transfer"
 sudo cp /data/vivek/extra/Backups/files/android-file-transfer /usr/bin
+
+echo -e "Transferring java binaries"
+sudo mkdir /usr/lib/jvm
+sudo cp /data/vivek/Downloads/internet/Software/jdk-17 /usr/lib/jvm -R
 echo -e "DONE"
