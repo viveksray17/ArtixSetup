@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
 echo "Step1: Installing WIFI Drivers and essential networking packages"
 sleep 1
 pacman -S broadcom-wl wireless_tools --needed 
