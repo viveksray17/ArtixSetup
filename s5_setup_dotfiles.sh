@@ -1,3 +1,4 @@
+#!/bin/bash
 command echo ".dotfiles.git" >> ~/.gitignore
 DIR=~/.dotfiles.git
 if [ -d "$DIR" ]; then

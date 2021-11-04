@@ -1,3 +1,4 @@
+#!/bin/bash
 DIR=~/yay-bin
 if [ -d "$DIR" ]; then
     sudo rm -rf "$DIR"

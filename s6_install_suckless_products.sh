@@ -1,3 +1,4 @@
+#!/bin/bash
 software_dirs=(
     "/data/vivek/dwm"
     "/data/vivek/st"
