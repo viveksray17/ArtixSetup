@@ -4,17 +4,13 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 echo "Step1: Installing WIFI Drivers and essential networking packages"
-sleep 1
 pacman -S broadcom-wl wireless_tools --needed 
 modprobe wl
-echo -e "\nDONE\n\n"
-sleep 1
+echo -e "\nDONE\n"
 
 echo "Step2: Installing Grephics Drivers and microcode"
-sleep 1
 pacman -S xf86-video-ati amd-ucode --noconfirm
 echo -e "\nDONE\n"
-sleep 1
 
 echo "Removing Screen Tearing"
 sleep 1
