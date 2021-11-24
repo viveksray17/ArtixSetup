@@ -28,19 +28,10 @@ sudo cp /data/vivek/Downloads/internet/fonts/* /usr/share/fonts/ -R
 sudo fc-cache -fv
 
 echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
-sudo cp /data/vivek/Downloads/internet/DMZ-White /usr/share/icons -R
+sudo cp /data/vivek/Downloads/internet/volantes_light_cursors /usr/share/icons -R
 sudo cp /data/vivek/Downloads/internet/Icons/* /usr/share/icons -R
-
-echo -e "\nAdding a command to /etc/profile to set the brightness on login"
-sudo cp /data/vivek/extra/Backups/files/profile /etc/profile
-
-echo -e "\nSet environment variable for qt5ct"
-echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee /etc/environment
 
 echo -e "\nAdd shell script for android file transfer"
 sudo cp /data/vivek/extra/Backups/files/android-file-transfer /usr/bin
 
-echo -e "Transferring java binaries"
-sudo mkdir /usr/lib/jvm
-sudo cp /data/vivek/Downloads/internet/Software/jdk-17 /usr/lib/jvm -R
 echo -e "DONE"

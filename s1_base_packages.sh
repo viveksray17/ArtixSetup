@@ -1,3 +1,2 @@
 #!/bin/bash
-sudo pacman -Syy
-sudo pacman -S fuse2 base-devel wget gvfs gvfs-mtp pcmanfm man noto-fonts noto-fonts-emoji pavucontrol pulseaudio-alsa pulseaudio picom openssh lxappearance zsh gnome-themes-extra ttf-liberation qt5ct mpv brightnessctl xorg-server xorg-xinit xorg-xmodmap scrot gtk-engine-murrine unzip bspwm sxhkd --needed
+sudo pacman -S python curl fuse2 base-devel wget gvfs gvfs-mtp pcmanfm man noto-fonts noto-fonts-emoji pavucontrol pipewire pipewire-pulse pipewire-alsa pipewire-jack picom openssh lxappearance zsh gnome-themes-extra ttf-liberation mpv brightnessctl xorg-server xorg-xinit xorg-xmodmap xorg-xsetroot scrot gtk-engine-murrine unzip bspwm sxhkd nitrogen zsh-syntax-highlighting zsh-autosuggestions mate-polkit firefox flatpak --needed
