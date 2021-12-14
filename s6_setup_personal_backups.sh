@@ -25,5 +25,7 @@ echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
 sudo cp /secrets/vivek/volantes_light_cursors /usr/share/icons -R
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 
+git clone https://github.com/viveksray17/passwords ~/.password-store
+
 sudo umount -R /secrets
 echo -e "DONE"
