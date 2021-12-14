@@ -1,10 +1,14 @@
 #!/bin/bash
-software_dirs=(
-    "/data/vivek/st"
-    "/data/vivek/slock"
-    "/data/vivek/dmenu"
+software=(
+    "st"
+    "slock"
+    "dmenu"
+    "dwm"
+    "dwmblocks"
 )
-for DIR in "${software_dirs[@]}"; do
-    command cd $DIR
-    command sudo make clean install
+mkdir ~/suckless
+for SOFTWARE in "${software[@]}"; do
+    git clone https://github.com/viveksray17/$SOFTWARE ~/suckless/$SOFTWARE
+    cd ~/suckless/$SOFTWARE
+    sudo make clean install
 done
