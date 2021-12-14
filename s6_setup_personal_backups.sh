@@ -26,6 +26,8 @@ sudo cp /secrets/vivek/volantes_light_cursors /usr/share/icons -R
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 
 git clone https://github.com/viveksray17/passwords ~/.password-store
-
+cd ~/.password-store
+git remote remove origin
+git remote add origin git@github.com:viveksray17/passwords
 sudo umount -R /secrets
 echo -e "DONE"
