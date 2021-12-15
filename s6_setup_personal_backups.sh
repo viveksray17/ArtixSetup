@@ -1,20 +1,19 @@
 #!/bin/bash
-
 sudo mount /dev/sda4 /secrets
-# REMOVE SSH DIRECTORY IF IT EXISTS
-DIR=~/.ssh
-if [ -d "$DIR" ]; then
-    rm -rf "$DIR"
-fi
-mkdir ~/.ssh
-cp /secrets/vivek/ssh/* ~/.ssh -R
 
-DIR=~/.gnupg
-if [ -d "$DIR" ]; then
-    rm -rf "$DIR"
-fi
-mkdir ~/.gnupg
-cp /secrets/vivek/gnupg/* ~/.gnupg -R
+directories=(
+    ssh
+    gnupg
+)
+for DIR in "${directories[@]}"; do
+    dir=~/.$DIR
+    if [ -d "$dir" ]; then
+        rm -rf "$dir"
+    fi
+    mkdir $dir
+    cp /secrets/vivek/$DIR/* $dir -R
+done
+
 # NVIM SETUP
 echo -e "\nINSTALLING vim-plug for nvim\n"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
