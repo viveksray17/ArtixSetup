@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo mkdir /secrets
 sudo mount /dev/sda4 /secrets
 
 directories=(
