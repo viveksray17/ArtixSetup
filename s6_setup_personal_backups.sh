@@ -52,6 +52,13 @@ for SOFTWARE in "${software[@]}"; do
     git remote add origin git@github.com:viveksray17/$SOFTWARE
 done
 
+# Installing firefox
+pip install requests beautifulsoup4 lxml
+fetched_version=$($HOME/.scripts/get_firefox_version.py)
+mkdir -p $HOME/Downloads/firefox_releases $HOME/Applications
+install_firefox="wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/$fetched_version/linux-x86_64/en-US/firefox-$fetched_version.tar.bz2 -P $HOME/Downloads/firefox_releases/ && tar -xvf $HOME/Downloads/firefox_releases/firefox-$fetched_version.tar.bz2 -C $HOME/Applications"
+sudo cp /secrets/vivek/files/firefox /usr/bin/firefox
+
 # Set Default binsh to dash
 sudo ln -sfn dash /bin/sh
 
