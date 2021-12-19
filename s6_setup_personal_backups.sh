@@ -31,14 +31,14 @@ echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
 sudo cp /secrets/vivek/volantes_light_cursors /usr/share/icons -R
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 echo -e "DONE\n"
+
 DIR=~/.password-store
 if [ -d "$DIR" ]; then
     rm -rf "$DIR"
 fi
-git clone https://github.com/viveksray17/passwords ~/.password-store
+git clone git@github.com:viveksray17/passwords ~/.password-store
 cd ~/.password-store
-git remote remove origin
-git remote add origin git@github.com:viveksray17/passwords
+
 software=(
     "st"
     "slock"
@@ -62,5 +62,8 @@ sudo cp /secrets/vivek/files/firefox /usr/bin/firefox
 # Set Default binsh to dash
 sudo ln -sfn dash /bin/sh
 
+# Create Necessary Directories
+mkdir -p $HOME/Pictures/Screenshots $HOME/Pictures/wallpapers
+git clone git@github.com:viveksray17/wallpapers
 sudo umount -R /secrets
 echo -e "DONE"
