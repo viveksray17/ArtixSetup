@@ -28,7 +28,7 @@ sudo cp /secrets/vivek/fonts/* /usr/share/fonts/ -R
 sudo fc-cache -fv
 
 echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
-sudo cp /secrets/vivek/volantes_light_cursors /usr/share/icons -R
+sudo cp /secrets/vivek/Breeze_Snow /usr/share/icons -R
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 echo -e "DONE\n"
 
