@@ -1,3 +1,3 @@
 #!/bin/sh
-doas sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j5"/' /etc/makepkg.conf
-yay -S sxiv-git ttf-ms-fonts libxft-bgra-git
+sudo sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j5"/' /etc/makepkg.conf
+yay -S sxiv-git ttf-ms-fonts

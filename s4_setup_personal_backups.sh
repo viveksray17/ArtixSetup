@@ -15,6 +15,13 @@ for DIR in "${directories[@]}"; do
     cp /secrets/vivek/$DIR/* $dir -R
 done
 
+# NVIM SETUP
+echo -e "\nINSTALLING vim-plug for neovim"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo -e "DONE"
+
+echo -e "\nSetting Up GRUB"
 sudo cp /secrets/vivek/files/grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -22,7 +29,6 @@ sudo cp /secrets/vivek/fonts/* /usr/share/fonts/ -R
 sudo fc-cache -fv
 
 echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
-sudo cp /secrets/vivek/Breeze_Snow /usr/share/icons -R
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 echo -e "DONE\n"
 
@@ -33,22 +39,13 @@ fi
 git clone git@github.com:viveksray17/passwords ~/.password-store
 cd ~/.password-store
 
-# Installing firefox
-pip install requests beautifulsoup4 lxml
-fetched_version=$($HOME/.scripts/get_firefox_version.py)
-mkdir -p $HOME/Downloads/firefox_releases $HOME/Applications
-download_firefox="wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/$fetched_version/linux-x86_64/en-US/firefox-$fetched_version.tar.bz2 -P $HOME/Downloads/firefox_releases/"
-extract_firefox="tar -xvf $HOME/Downloads/firefox_releases/firefox-$fetched_version.tar.bz2 -C $HOME/Applications"
-$download_firefox
-$extract_firefox
-sudo cp /secrets/vivek/files/firefox /usr/bin/firefox
-
 # Set Default binsh to dash
 sudo ln -sfn dash /bin/sh
 
-# Changing to doas
-yay --sudo doas --sudoflags -- --save
-ln -s /usr/bin/doas /usr/bin/sudo
-
+# Create Necessary Directories
+mkdir -p $HOME/Pictures/Screenshots $HOME/Pictures/wallpapers
+echo -e "\nGetting Wallpapers"
+git clone git@github.com:viveksray17/wallpapers $HOME/Pictures/wallpapers
 sudo umount -R /secrets
+
 echo -e "DONE"
