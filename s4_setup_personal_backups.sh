@@ -14,7 +14,6 @@ for DIR in "${directories[@]}"; do
     mkdir $dir
     cp /secrets/vivek/$DIR/* $dir -R
 done
-
 # NVIM SETUP
 echo -e "\nINSTALLING vim-plug for neovim"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -31,7 +30,9 @@ sudo fc-cache -fv
 echo -e "\nCOPYING ICONS SO MAY TAKE SOME TIME"
 sudo cp /secrets/vivek/Icons/* /usr/share/icons -R
 echo -e "DONE\n"
+sudo umount -R /secrets
 
+echo -e "\nSETTING UP PASSWORDS"
 DIR=~/.password-store
 if [ -d "$DIR" ]; then
     rm -rf "$DIR"
@@ -42,10 +43,11 @@ cd ~/.password-store
 # Set Default binsh to dash
 sudo ln -sfn dash /bin/sh
 
-# Create Necessary Directories
-mkdir -p $HOME/Pictures/Screenshots $HOME/Pictures/wallpapers
 echo -e "\nGetting Wallpapers"
+mkdir -p $HOME/Pictures/Screenshots $HOME/Pictures/wallpapers
 git clone git@github.com:viveksray17/wallpapers $HOME/Pictures/wallpapers
-sudo umount -R /secrets
 
+echo -e "\nGetting Bookmarks"
+mkdir -p $HOME/.local/share/bookmarks
+git clone git@github.com:viveksray17/bookmarks $HOME/.local/share/bookmarks
 echo -e "DONE"
