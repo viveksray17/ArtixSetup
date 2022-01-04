@@ -11,8 +11,7 @@ for DIR in "${directories[@]}"; do
     if [ -d "$dir" ]; then
         rm -rf "$dir"
     fi
-    mkdir $dir
-    cp /secrets/vivek/$DIR/* $dir -R
+    cp /secrets/vivek/$DIR $dir -r
 done
 # NVIM SETUP
 echo -e "\nINSTALLING vim-plug for neovim"
