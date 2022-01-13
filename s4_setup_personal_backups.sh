@@ -49,4 +49,7 @@ git clone git@github.com:viveksray17/wallpapers $HOME/Pictures/wallpapers
 echo -e "\nGetting Bookmarks"
 mkdir -p $HOME/.local/share/bookmarks
 git clone git@github.com:viveksray17/bookmarks $HOME/.local/share/bookmarks
+
+echo -e "\nRemoving Unecessary Services"
+sudo rm /run/runit/service/agetty-tty3 /run/runit/service/agetty-tty4 /run/runit/service/agetty-tty5 /run/runit/service/agetty-tty6
 echo -e "DONE"
