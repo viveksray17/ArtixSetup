@@ -3,12 +3,9 @@ software=(
     "st"
     "slock"
     "dmenu"
-    "dwm"
-    "dwmblocks"
 )
-mkdir ~/suckless
 for SOFTWARE in "${software[@]}"; do
-    git clone git@github.com:viveksray17/$SOFTWARE ~/suckless/$SOFTWARE
-    cd ~/suckless/$SOFTWARE
+    pushd ~/build/$SOFTWARE > /dev/null
     sudo make clean install
+    popd > /dev/null
 done
