@@ -4,7 +4,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 echo "Step1: Installing WIFI Drivers and essential networking packages"
-pacman -S broadcom-wl-dkms wireless_tools --needed 
+pacman -S broadcom-wl wireless_tools --needed 
 modprobe wl
 echo -e "\nDONE\n"
 
